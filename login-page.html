@@ -26,13 +26,13 @@
                 <a class="login-main__logo" href="#">
                     <img src="/images/bookshelter-logo.svg" alt="" />
                 </a>
-
+                <p class="login-main__unsuccesful"></p>
                 <form class="login-main__form">
                     <div class="login-main__username input-group">
-                        <input type="text" class="form-control" placeholder=" Username" aria-label="Username" aria-describedby="basic-addon1" />
+                        <input type="text" class="login-main__username-input form-control" placeholder=" Username" required />
                     </div>
                     <div class="login-main__password input-group">
-                        <input type="text" class="form-control" placeholder=" Password" aria-label="Username" aria-describedby="basic-addon1" />
+                        <input type="text" class="login-main__password-input form-control" placeholder=" Password" required />
                     </div>
 
                     <button class="login-main__btn btn btn-info w-100">Login</button>
@@ -46,7 +46,7 @@
 
     <!-- JAVASCRIPT -->
 
-    <script src="/js/script.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>
