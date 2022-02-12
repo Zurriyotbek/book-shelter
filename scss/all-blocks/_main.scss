@@ -2,8 +2,17 @@
     flex-grow: 1;
 }
 
+.main__container {
+    display: flex;
+}
+
+// book list
 .main__content-right {
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    gap: 33px;
     padding: 40px;
+    padding-right: 0;
     background: #f8fafd;
 }
 
@@ -65,4 +74,69 @@
     padding: 10px 22px;
     background: rgba(13, 117, 255, 0.05);
     color: #0d75ff;
+}
+
+// bookmarks
+.main__content-left {
+    margin: 0;
+    padding: 25px;
+    width: 269px;
+}
+
+.bookmarks__title {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.bookmarks__text {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 155.6%;
+    color: #000000;
+}
+
+.bookmarks__item {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafd;
+}
+
+.bookmarks__book-name {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.bookmarks__book-author {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757881;
+}
+
+.bookmarks__right a {
+    text-decoration: none;
+}
+
+.bookmarks__book-open {
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
 }
