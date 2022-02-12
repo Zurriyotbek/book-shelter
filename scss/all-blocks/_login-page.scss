@@ -1,0 +1,32 @@
+.login-main {
+    background-image: url(/images/Login-bg-img.jpg);
+}
+
+.login-main__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 198px;
+}
+
+.login-main__logo img {
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.login-main__form input {
+    background: transparent;
+}
+
+.login-main__username {
+    margin-bottom: 20px;
+}
+
+.login-main__password {
+    margin-bottom: 43px;
+}
+
+.login-main__btn {
+    background-color: #fff;
+    color: #0d75ff;
+}

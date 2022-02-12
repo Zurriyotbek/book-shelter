@@ -1,0 +1,29 @@
+.sub-header {
+    padding: 11px 0;
+    padding-left: 340px;
+    border-top: 1px solid rgba(227, 230, 235, 1);
+    border-bottom: 1px solid rgba(227, 230, 235, 1);
+}
+
+.sub-header__container {
+    display: flex;
+    align-items: center;
+}
+
+.sub-header__btn-sort {
+    padding: 5px 13px;
+    background-color: #a6b0c3;
+    color: #fff;
+    border: none;
+}
+
+.sub-header__result {
+    margin: 0;
+    margin-right: auto;
+    padding: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #222531;
+}

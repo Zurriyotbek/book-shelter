@@ -20,42 +20,26 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header__container container">
-            <a class="header__logo" href="#">
-                <img src="/images/header-logo.svg" alt="" />
-            </a>
+    <main class="login-main main">
+        <div class="login-main__container container">
+            <div class="login-main__content">
+                <a class="login-main__logo" href="#">
+                    <img src="/images/bookshelter-logo.svg" alt="" />
+                </a>
 
-            <div class="header__search-input input-group">
-                <input type="text" class="form-control" placeholder=" Search" aria-label="Username" aria-describedby="basic-addon1" />
-            </div>
+                <form class="login-main__form">
+                    <div class="login-main__username input-group">
+                        <input type="text" class="form-control" placeholder=" Username" aria-label="Username" aria-describedby="basic-addon1" />
+                    </div>
+                    <div class="login-main__password input-group">
+                        <input type="text" class="form-control" placeholder=" Password" aria-label="Username" aria-describedby="basic-addon1" />
+                    </div>
 
-            <div class="header__logout">
-                <img class="header__sun-icon" src="/images/sun-icon.svg" alt="" />
-
-                <button class="header__btn btn btn-primary">Logout</button>
+                    <button class="login-main__btn btn btn-info w-100">Login</button>
+                </form>
             </div>
         </div>
-    </header>
-
-    <div class="sub-header">
-        <div class="sub-header__container container">
-            <p class="sub-header__result">Showing 18 Results</p>
-
-            <button class="sub-header__btn-sort btn btn-secondary">
-          Order by newest
-        </button>
-        </div>
-    </div>
-
-    <!-- MAIN -->
-    <main class="main">
-        <div class="main__container container"></div>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="footer"></footer>
 
     <!-- BOOTSTRAP JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
