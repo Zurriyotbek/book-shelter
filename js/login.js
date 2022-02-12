@@ -36,6 +36,8 @@ elForm.addEventListener("submit", function(evt) {
                 localStorage.setItem("token", data.token);
 
                 location.replace("index.html");
+            } else {
+                unsuccessful.textContent = "Username or password is wrong !";
             }
         });
 

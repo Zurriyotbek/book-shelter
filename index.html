@@ -27,8 +27,8 @@
                 <img src="/images/header-logo.svg" alt="" />
             </a>
 
-            <div class="header__search-input input-group">
-                <input type="text" class="form-control" placeholder=" Search" aria-label="Username" aria-describedby="basic-addon1" />
+            <div class="header__search-input-wrapper input-group">
+                <input type="text" class="header__search-input form-control" placeholder=" Search" required />
             </div>
 
             <div class="header__logout">
@@ -41,7 +41,9 @@
 
     <section class="sub-header">
         <div class="sub-header__container container">
-            <p class="sub-header__result">Showing 18 Results</p>
+            <p class="sub-header__result">
+                Showing <span class="total-results"></span> Results
+            </p>
 
             <button class="sub-header__btn-sort btn btn-secondary">
           Order by newest
@@ -80,7 +82,7 @@
 
             <!-- book list -->
             <div class="main__content-right card-list">
-                <div class="card">
+                <!-- <div class="card">
                     <img class="card__img" src="/images/card-img.png" alt="" />
                     <div class="card__body">
                         <h2 class="card__title">Python</h2>
@@ -98,7 +100,7 @@
                 Read
               </button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
