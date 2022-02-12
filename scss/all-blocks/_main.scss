@@ -1,3 +1,68 @@
 .main {
-  flex-grow: 1;
+    flex-grow: 1;
+}
+
+.main__content-right {
+    padding: 40px;
+    background: #f8fafd;
+}
+
+.card {
+    margin: 0;
+    width: 282px;
+    max-width: 100%;
+    padding: 13px 15px 13px 21px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-color: #e3e6eb;
+}
+
+.card__img {
+    margin: 0;
+    margin-bottom: 19px;
+    padding: 0;
+    max-width: 100%;
+}
+
+.card__title {
+    margin: 0;
+    margin-bottom: 2px;
+    padding: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.card__author,
+.card__year {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757881;
+}
+
+.card__year {
+    margin-bottom: 10px;
+}
+
+.card__btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.card__bookmark-btn {
+    padding: 10px 25px;
+    background-color: #ffd80d;
+}
+
+.card__info-btn {
+    padding: 10px 22px;
+    background: rgba(13, 117, 255, 0.05);
+    color: #0d75ff;
 }
