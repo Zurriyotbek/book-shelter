@@ -150,11 +150,24 @@
 }
 
 .bookmarks__right a {
+    display: grid;
+    grid-template-columns: repeat(2, 25px);
     text-decoration: none;
 }
 
 .bookmarks__book-open {
+    display: inline-block;
     margin: 0;
     margin-right: 5px;
     padding: 0;
+    width: 24px;
+}
+
+.bookmarks__book-delete {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: none;
+    width: 24px;
 }
