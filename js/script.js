@@ -17,11 +17,11 @@ let totalResults = document.querySelector(".total-results");
 const elResults = document.querySelector(".sub-header__result");
 const elSortBtn = document.querySelector(".sub-header__btn-sort");
 // let elBookmarkBtn = document.querySelectorAll(".card__bookmark-btn");
-// const localToken = localStorage.getItem("token");
+const localToken = localStorage.getItem("token");
 
-// if (!localToken) {
-//     location.replace("login-page.html");
-// }
+if (!localToken) {
+    location.replace("login-page.html");
+}
 
 // Listen click event of 'Logout' button and leave main page
 
