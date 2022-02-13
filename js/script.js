@@ -82,10 +82,10 @@ function renderBooks(array, element) {
             // append created element to list
             element.appendChild(card);
 
-            console.log(book);
+            // console.log(book);
         });
     } catch (err) {
-        console.log(err.message);
+        // console.log(err.message);
     }
 }
 
@@ -129,11 +129,13 @@ elCardList.addEventListener("click", (evt) => {
 const elPaginationList = document.querySelector(".pagination-list");
 let prevBtn = document.querySelector(".prev-btn");
 let nextBtn = document.querySelector(".next-btn");
-let currPage = 1;
+let currPage = 0;
 
 ///////// previous button /////////
 prevBtn.addEventListener("click", () => {
-    pageStartIndex = pageStartIndex - 10;
+    if (pageStartIndex >= 10) {
+        pageStartIndex = pageStartIndex - 10;
+    }
     currPage = pageStartIndex / 10;
     getBooks();
 });
@@ -141,7 +143,8 @@ prevBtn.addEventListener("click", () => {
 ////////// next button ///////////
 nextBtn.addEventListener("click", () => {
     pageStartIndex += 10;
-    currPage = pageStartIndex * 10;
+    currPage = pageStartIndex / 10;
+    console.log(currPage);
     getBooks();
 });
 
@@ -156,7 +159,7 @@ elPaginationList.addEventListener("click", (evt) => {
 //////////// FETCH BOOKS API //////////
 //////////////////////////////////////
 let sort = "relevance";
-let pageStartIndex = 1;
+let pageStartIndex = 0;
 const getBooks = async() => {
     try {
         const response = await fetch(
@@ -172,19 +175,35 @@ const getBooks = async() => {
         });
 
         ////// PAGINATION ///////
+        // let counter = 0;
+
+        let totalBooks = data.totalItems;
 
         let totalPages = Math.ceil(data.totalItems / 10);
 
         elPaginationList.innerHTML = null;
 
-        pageStartIndex === 1 ?
-            (prevBtn.disabled = true) :
-            (prevBtn.disabled = false);
+        currPage === 0 ? (prevBtn.disabled = true) : (prevBtn.disabled = false);
+
+        pageStartIndex - 10 >= totalBooks ?
+            (nextBtn.disabled = true) :
+            (nextBtn.disabled = false);
 
         for (let i = 0; i <= totalPages; i++) {
+            currPage = i + 1;
             let html = ` 
-          <li class="page-item page-link">${i}</li> 
-    `;
+            <li class="page-item page-link">${currPage}</li>
+            `;
+
+            if (currPage == i) {
+                html = `
+        <li class="page-item page-link active">${currPage}</li>
+      `;
+            } else {
+                html = `
+        <li class="page-item page-link">${currPage}</li>
+      `;
+            }
 
             elPaginationList.insertAdjacentHTML("beforeend", html);
         }
@@ -243,10 +262,6 @@ elSearchInput.addEventListener("change", () => {
     pageStartIndex = 0;
     getBooks();
 });
-
-/////////// temporary input value
-elSearchInput.value = "python";
-getBooks();
 
 /////////////////////////////////////////////////
 //////// adding event to Sort btn //////////////
@@ -341,69 +356,3 @@ elBookmarkList.addEventListener("click", (evt) => {
         });
     }
 });
-
-/////////////////////////
-/////////////////////////////////////////////////
-//////////////////////////////////////////////
-// const getMovies = async function () {
-//     const response = await fetch(
-//       `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}&page=${page}`
-//     );
-
-//     const data = await response.json();
-
-//     if (data.Response === "True" && data.Search.length > 0) {
-//       renderMovies(data.Search, elList);
-//     }
-
-//     page === 1 ? (elPrevBtn.disabled = true) : (elPrevBtn.disabled = false);
-
-//     const totalPageResult = Math.ceil(data.totalResults / 10);
-
-//     page === totalPageResult
-//       ? (elNextBtn.disabled = true)
-//       : (elNextBtn.disabled = false);
-
-//     elPaginationList.innerHTML = null;
-
-//     for (let i = 1; i <= totalPageResult; i++) {
-//       let htmlLi = `
-//         <li class="page-item page-link">${i}</li>
-//       `;
-
-//       if (page == i) {
-//         htmlLi = `
-//         <li class="page-item page-link activejon">${i}</li>
-//       `;
-//       } else {
-//         htmlLi = `
-//         <li class="page-item page-link">${i}</li>
-//       `;
-//       }
-
-//       elPaginationList.insertAdjacentHTML("beforeend", htmlLi);
-//     }
-// };
-
-// getMovies();
-
-//   input.addEventListener("change", function (evt) {
-//     search = input.value;
-//     page = 1;
-//     getMovies();
-//   });
-
-//   elPrevBtn.addEventListener("click", () => {
-//     page--;
-//     getMovies();
-//   });
-
-//   elNextBtn.addEventListener("click", () => {
-//     page++;
-//     getMovies();
-//   });
-
-//   elPaginationList.addEventListener("click", function (evt) {
-//     page = Number(evt.target.textContent);
-//     getMovies();
-//   });

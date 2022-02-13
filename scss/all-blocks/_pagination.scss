@@ -15,10 +15,16 @@
     padding: 6px 12px;
 }
 
-.next-btn {}
+.next-btn {
+    border: none;
+}
 
 .pagination-list {
     overflow: auto;
 }
 
 .page-item {}
+
+.active {
+    background-color: red;
+}
