@@ -251,8 +251,6 @@ const getBooks = async() => {
 
         // hide results
         elResults.innerHTML = null;
-
-        console.log(err.message);
     }
 };
 
